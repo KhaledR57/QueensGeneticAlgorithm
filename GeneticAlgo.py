@@ -25,7 +25,7 @@ def random_pick(population):
     return population[random.randint(0, len(population) - 1)]
 
 
-def selection(population):
+def thanos_gauntlet(population):
     population.sort(key=lambda val: val.get_fitness())
     return population[0:int(len(population) / 4) + 1]
 
@@ -33,7 +33,7 @@ def selection(population):
 def genetic_algo(boardSize, populationSize, mutation_probability):
     new_population = []
     population = generate_population(boardSize, populationSize)
-    survivors = selection(population)  # select parents
+    survivors = thanos_gauntlet(population)  # select parents (snap)
     for _ in range(len(population)):
         x = random_pick(survivors)  # pick random parent from survivors
         y = random_pick(survivors)  # pick random parent from survivors
