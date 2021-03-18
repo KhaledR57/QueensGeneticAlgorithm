@@ -48,6 +48,7 @@ def genetic_algo(boardSize, populationSize, mutation_probability):
 
 def let_the_game_begin(boardSize=5, populationSize=30, mutation_probability=0.7, generation=-1):
     gen = 0
+    fittest = None
     while generation != gen:
         population = genetic_algo(boardSize, populationSize, mutation_probability)
         fittest = min(population, key=lambda val: val.get_fitness())
